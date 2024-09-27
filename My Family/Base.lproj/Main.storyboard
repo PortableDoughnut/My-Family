@@ -23,18 +23,40 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gwen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwr-Bi-UbE">
-                                <rect key="frame" x="0.0" y="273.33333333333331" width="393" height="21"/>
+                                <rect key="frame" x="0.0" y="273.33333333333331" width="393" height="20.333333333333314"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20.329999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="tmv-lb-DDw">
+                                <rect key="frame" x="0.0" y="293.66666666666669" width="393" height="140"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Meagan Football" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-OK-wKc">
+                                        <rect key="frame" x="0.0" y="0.0" width="186.33333333333334" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ZmC-OK-wKc" secondAttribute="height" multiplier="4:3" id="fVd-Kq-YGB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mads Hunny" translatesAutoresizingMaskIntoConstraints="NO" id="jiX-uc-aeL">
+                                        <rect key="frame" x="206.66666666666663" y="0.0" width="186.33333333333337" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jiX-uc-aeL" secondAttribute="height" multiplier="4:3" id="MB5-JD-cFU"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.41568627450980389" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pUu-kt-h0k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2k6-fh-X6S"/>
+                            <constraint firstItem="tmv-lb-DDw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4z0-Wx-7na"/>
+                            <constraint firstItem="tmv-lb-DDw" firstAttribute="top" secondItem="Uwr-Bi-UbE" secondAttribute="bottom" id="bGZ-yZ-mMi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uwr-Bi-UbE" secondAttribute="trailing" id="eZ2-BH-p66"/>
                             <constraint firstItem="Uwr-Bi-UbE" firstAttribute="top" secondItem="pUu-kt-h0k" secondAttribute="bottom" constant="2" id="hEE-aa-s5l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tmv-lb-DDw" secondAttribute="trailing" id="tUO-9m-5Qd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pUu-kt-h0k" secondAttribute="trailing" id="xqS-80-a3V"/>
                             <constraint firstItem="Uwr-Bi-UbE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yee-np-pTc"/>
                             <constraint firstItem="pUu-kt-h0k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zcZ-vp-iyw"/>
@@ -86,6 +108,8 @@
     </scenes>
     <resources>
         <image name="Gwen Coffee" width="2042" height="1538"/>
+        <image name="Mads Hunny" width="1280" height="960"/>
+        <image name="Meagan Football" width="2048" height="1536"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
