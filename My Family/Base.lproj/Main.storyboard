@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23077"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -70,14 +69,14 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meagan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTh-Fc-Jyc">
                                                 <rect key="frame" x="0.0" y="0.0" width="205" height="20"/>
-                                                <color key="backgroundColor" red="0.0" green="0.41568627450000001" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1725490093" green="0.40784314269999999" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mads" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUv-tz-8UK">
                                                 <rect key="frame" x="225.33333333333337" y="0.0" width="204.66666666666663" height="20"/>
-                                                <color key="backgroundColor" red="0.0" green="0.41568627450000001" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1725490093" green="0.40784314269999999" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -119,14 +118,14 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brett" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etw-55-X5L">
                                                 <rect key="frame" x="0.0" y="0.0" width="205" height="20"/>
-                                                <color key="backgroundColor" red="0.0" green="0.41568627450000001" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1725490093" green="0.40784314269999999" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alicia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gge-HC-KRE">
                                                 <rect key="frame" x="225.33333333333337" y="0.0" width="204.66666666666663" height="20"/>
-                                                <color key="backgroundColor" red="0.0" green="0.41568627450000001" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.1725490093" green="0.40784314269999999" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -141,7 +140,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.0" green="0.41568627450980389" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1725490093" green="0.40784314269999999" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uoD-IP-HG7" secondAttribute="trailing" id="Dyw-Hb-Wlo"/>
                             <constraint firstItem="uoD-IP-HG7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qiY-bM-u2V"/>
@@ -150,7 +149,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SzK-0M-XDD"/>
                     <connections>
-                        <segue destination="uNF-Yd-isZ" kind="show" id="3ib-mD-zl5"/>
+                        <segue destination="uNF-Yd-isZ" kind="show" identifier="DetailViewSegue" id="3ib-mD-zl5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -189,10 +188,48 @@
                     <view key="view" contentMode="scaleToFill" id="6uP-P8-Wjc">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FUU-5U-Zcr">
+                                <rect key="frame" x="0.0" y="103" width="430" height="573.33333333333337"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pCF-xd-oZj">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="573.33333333333337"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LWz-b7-IDW">
+                                <rect key="frame" x="0.0" y="283.66666666666669" width="430" height="614.33333333333326"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient Image" translatesAutoresizingMaskIntoConstraints="NO" id="KXE-9Z-1xu">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="614.33333333333337"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="KXE-9Z-1xu" secondAttribute="height" multiplier="3.5:5" id="e3m-g0-3bX"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KXE-9Z-1xu" firstAttribute="top" secondItem="LWz-b7-IDW" secondAttribute="top" id="BXn-VF-fZQ"/>
+                                    <constraint firstItem="KXE-9Z-1xu" firstAttribute="leading" secondItem="LWz-b7-IDW" secondAttribute="leading" id="GMQ-cW-Syn"/>
+                                    <constraint firstAttribute="trailing" secondItem="KXE-9Z-1xu" secondAttribute="trailing" id="Jo0-4y-fpy"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ybO-FC-C3n"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.1725490093" green="0.40784314269999999" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="FUU-5U-Zcr" firstAttribute="top" secondItem="ybO-FC-C3n" secondAttribute="top" id="0aF-PQ-QrB"/>
+                            <constraint firstItem="ybO-FC-C3n" firstAttribute="bottom" secondItem="FUU-5U-Zcr" secondAttribute="bottom" constant="221.66666666666663" id="9SA-QE-lem"/>
+                            <constraint firstItem="LWz-b7-IDW" firstAttribute="leading" secondItem="ybO-FC-C3n" secondAttribute="leading" id="9mb-qa-zej"/>
+                            <constraint firstItem="FUU-5U-Zcr" firstAttribute="trailing" secondItem="ybO-FC-C3n" secondAttribute="trailing" id="OOU-Rl-Mo4"/>
+                            <constraint firstItem="FUU-5U-Zcr" firstAttribute="leading" secondItem="ybO-FC-C3n" secondAttribute="leading" id="aZr-np-SGl"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="LWz-b7-IDW" secondAttribute="bottom" id="ahC-al-Jzw"/>
+                            <constraint firstItem="ybO-FC-C3n" firstAttribute="trailing" secondItem="LWz-b7-IDW" secondAttribute="trailing" id="e4F-MR-lsu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="owh-1L-CMN"/>
+                    <connections>
+                        <outlet property="landscapeImage" destination="pCF-xd-oZj" id="sMk-5Y-GAK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2q-gp-qCf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,6 +243,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vHF-ux-EzD">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99607843139999996" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.99607843139999996" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99607843139999996" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.99607843139999996" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -217,14 +262,13 @@
             <point key="canvasLocation" x="112.21374045801527" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.99607843139999996" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="Alicia Donkey" width="4080" height="3072"/>
         <image name="Brett Camera" width="4032" height="3024"/>
+        <image name="Gradient Image" width="200" height="600"/>
         <image name="Gwen Coffee" width="2042" height="1538"/>
         <image name="Mads Hunny" width="1280" height="960"/>
         <image name="Meagan Football" width="2048" height="1536"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

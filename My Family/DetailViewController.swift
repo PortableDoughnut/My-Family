@@ -7,12 +7,29 @@
 
 import UIKit
 
+
 class DetailViewController: UIViewController {
 
+	@IBOutlet weak var landscapeImage: UIImageView!
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+		switch self.title {
+			case "Meagan":
+				landscapeImage.image = UIImage(named: "Meagan Backyard")
+			case "Gwen":
+				landscapeImage.image = UIImage(named: "Gwen Mirror")
+			case "Brett":
+				landscapeImage.image = UIImage(named: "Brett Peter")
+			case "Alicia":
+				landscapeImage.image = UIImage(named: "Alicia Puppies")
+			case "Mads":
+				landscapeImage.image = UIImage(named: "Mads L")
+			default:
+				break
+		}
     }
     
 

@@ -13,25 +13,31 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		guard let title = sender as? String else { return }
+		
+		segue.destination.title = title
+	}
 
     @IBAction func coffeeGwenTapped(_ sender: UITapGestureRecognizer) {
-        print("Coffee Gwen")
+		performSegue(withIdentifier: "DetailViewSegue", sender: "Gwen")
     }
     
     @IBAction func footballMeaganTapped(_ sender: UITapGestureRecognizer) {
-        print("Football Meagan")
+		performSegue(withIdentifier: "DetailViewSegue", sender: "Meagan")
     }
     
     @IBAction func madsHunnyTapped(_ sender: UITapGestureRecognizer) {
-        print("Mads Hunny")
+		performSegue(withIdentifier: "DetailViewSegue", sender: "Mads")
     }
     
     @IBAction func brettCameraTapped(_ sender: UITapGestureRecognizer) {
-        print("Brett Camera")
+		performSegue(withIdentifier: "DetailViewSegue", sender: "Brett")
     }
     
     @IBAction func AliciaDonkeyTapped(_ sender: UITapGestureRecognizer) {
-        print("Alicia Donkey")
+		performSegue(withIdentifier: "DetailViewSegue", sender: "Alicia")
     }
 }
 
