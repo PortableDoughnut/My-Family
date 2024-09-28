@@ -19,11 +19,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uoD-IP-HG7">
                                 <rect key="frame" x="0.0" y="103" width="430" height="551.66666666666663"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gwen Coffee" translatesAutoresizingMaskIntoConstraints="NO" id="pUu-kt-h0k">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gwen Coffee" translatesAutoresizingMaskIntoConstraints="NO" id="pUu-kt-h0k">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="184.33333333333334"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pUu-kt-h0k" secondAttribute="height" multiplier="21:9" id="THF-Cr-G9Z"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Bie-4H-3jj" appends="YES" id="iv6-gP-sqp"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gwen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwr-Bi-UbE">
                                         <rect key="frame" x="0.0" y="184.33333333333331" width="430" height="20"/>
@@ -134,6 +138,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Bie-4H-3jj"/>
             </objects>
             <point key="canvasLocation" x="1038.9312977099237" y="-2.1126760563380285"/>
         </scene>
