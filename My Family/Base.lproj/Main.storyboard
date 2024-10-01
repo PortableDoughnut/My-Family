@@ -204,7 +204,24 @@
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="614.33333333333337"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="KXE-9Z-1xu" secondAttribute="height" multiplier="3.5:5" id="e3m-g0-3bX"/>
+                                            <constraint firstAttribute="width" secondItem="KXE-9Z-1xu" secondAttribute="height" multiplier="2.5:1.75" id="uCx-f4-X6j"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="e3m-g0-3bX"/>
+                                                <exclude reference="uCx-f4-X6j"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="uCx-f4-X6j"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="e3m-g0-3bX"/>
+                                            </mask>
+                                        </variation>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -212,6 +229,17 @@
                                     <constraint firstItem="KXE-9Z-1xu" firstAttribute="leading" secondItem="LWz-b7-IDW" secondAttribute="leading" id="GMQ-cW-Syn"/>
                                     <constraint firstAttribute="trailing" secondItem="KXE-9Z-1xu" secondAttribute="trailing" id="Jo0-4y-fpy"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BXn-VF-fZQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular" distribution="fill"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="BXn-VF-fZQ"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="3" verticalHuggingPriority="3" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bd6-9e-Bn3" userLabel="Details">
                                 <rect key="frame" x="0.0" y="283.66666666666669" width="430" height="614.33333333333326"/>
@@ -235,9 +263,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="xeA-cb-eQG" firstAttribute="top" secondItem="bd6-9e-Bn3" secondAttribute="topMargin" id="T3r-0k-hjP"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ybO-FC-C3n"/>
