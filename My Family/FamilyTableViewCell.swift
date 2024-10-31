@@ -25,7 +25,7 @@ class FamilyTableViewCell: UITableViewCell {
 	
 	func update(_ person: familyDetail) {
 		nameLabel.text = person.name
-		landscapeImage.image = UIImage(named: person.image)
+		landscapeImage.image = UIImage(named: person.landscapeImage)
 	}
 
 }

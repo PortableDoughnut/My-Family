@@ -15,33 +15,18 @@ class DetailViewController: UIViewController {
 	@IBOutlet weak var specalityLabel: UILabel!
 	@IBOutlet weak var landscapeImage: UIImageView!
 	
-	
+	var familyMember: familyDetail?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		var familyMemberToUse: familyDetail
 		
-		switch self.title {
-			case "Meagan":
-				familyMemberToUse = meagan
-			case "Gwen":
-				familyMemberToUse = gwen
-			case "Brett":
-				familyMemberToUse = brett
-			case "Alicia":
-				familyMemberToUse = alicia
-			case "Mads":
-				familyMemberToUse = mads
-			default:
-				familyMemberToUse = gwen
-				print("Error")
+		if let familyMember = familyMember {
+			title = familyMember.name
+			bioLabel.text = familyMember.bio
+			ageLabel.text = "\(familyMember.age)"
+			specalityLabel.text = familyMember.specality
+			landscapeImage.image = UIImage(named: familyMember.portraitImage)
 		}
-		
-		landscapeImage.image = UIImage(named: familyMemberToUse.image)
-		specalityLabel.text = familyMemberToUse.specality
-		ageLabel.text = "\(String(familyMemberToUse.age)) years old"
-		bioLabel.text = familyMemberToUse.bio
     }
     
 
