@@ -8,9 +8,19 @@
 import UIKit
 
 class AddFamilyTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+	@IBOutlet weak var nameTextField: UITextField!
+	
 	@IBOutlet weak var portraitImage: UIImageView!
 	@IBOutlet weak var landscapeImage: UIImageView!
 	@IBOutlet weak var landscapeImageButton: UIButton!
+	
+	@IBOutlet weak var specalityTextField: UITextField!
+	
+	@IBOutlet weak var ageTextField: UITextField!
+	
+	@IBOutlet weak var bioTextView: UITextView!
+	
+	var familyMemberDelegate: FamilyDelagate?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,5 +139,36 @@ class AddFamilyTableViewController: UITableViewController, UIImagePickerControll
 			landscapeImage.image = image
 		}
 		dismiss(animated: true, completion: nil)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "addFamilyMemberSegue" {
+			
+		}
+	}
+	
+	@IBAction func onSaveButtonTapped(_ sender: UIBarButtonItem) {
+		let newFamilyMember: familyDetail = familyDetail(
+			name: nameTextField.text ?? "",
+			landscapeImage: (landscapeImage.image ?? UIImage(named: "Gwen Coffee"))!,
+			portraitImage: (portraitImage.image ?? UIImage(named: "Gwen Mirror"))!,
+			specality: specalityTextField.text ?? "",
+			age: Int(ageTextField.text ?? "25")!,
+			bio: bioTextView.text ?? ""
+			)
+		familyMemberDelegate?.addFamilyMember(newFamilyMember)
+	}
+	
+	@IBAction func unwindToFamilyView(segue: UIStoryboardSegue) {
+		let newFamilyMember: familyDetail = familyDetail(
+			name: nameTextField.text ?? "",
+			landscapeImage: (landscapeImage.image ?? UIImage(named: "Gwen Coffee"))!,
+			portraitImage: (portraitImage.image ?? UIImage(named: "Gwen Mirror"))!,
+			specality: specalityTextField.text ?? "",
+			age: Int(ageTextField.text ?? "25")!,
+			bio: bioTextView.text ?? ""
+			)
+		familyMemberDelegate?.addFamilyMember(newFamilyMember)
+		performSegue(withIdentifier: "addFamilyMemberSegue", sender: nil)
 	}
 }

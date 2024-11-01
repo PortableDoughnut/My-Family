@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
 			bioLabel.text = familyMember.bio
 			ageLabel.text = "\(familyMember.age)"
 			specalityLabel.text = familyMember.specality
-			landscapeImage.image = UIImage(named: familyMember.portraitImage)
+			landscapeImage.image = familyMember.landscapeImage
 		}
     }
     

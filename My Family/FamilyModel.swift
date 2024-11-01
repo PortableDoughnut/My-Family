@@ -4,14 +4,48 @@
 //
 //  Created by Gwen Thelin on 10/31/24.
 //
+import Foundation
+import UIKit
 
 struct familyDetail {
 	var name: String
-	var landscapeImage: String
-	var portraitImage: String
+	var landscapeImage: UIImage
+	var portraitImage: UIImage
 	var specality: String
 	var age: Int
 	var bio: String
+	
+	init(
+		name: String,
+		landscapeImage: String,
+		portraitImage: String,
+		specality: String,
+		age: Int,
+		bio: String
+	) {
+		self.name = name
+		self.landscapeImage = UIImage(named: landscapeImage)!
+		self.portraitImage = UIImage(named: portraitImage)!
+		self.specality = specality
+		self.age = age
+		self.bio = bio
+	}
+	
+	init(
+		name: String,
+		landscapeImage: UIImage,
+		portraitImage: UIImage,
+		specality: String,
+		age: Int,
+		bio: String
+	) {
+		self.name = name
+		self.landscapeImage = landscapeImage
+		self.portraitImage = portraitImage
+		self.specality = specality
+		self.age = age
+		self.bio = bio
+	}
 }
 
 var gwen = familyDetail(

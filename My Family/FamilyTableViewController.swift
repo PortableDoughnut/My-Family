@@ -7,15 +7,19 @@
 
 import UIKit
 
+protocol FamilyDelagate {
+	func addFamilyMember(_ familyMember: familyDetail)
+}
+
 class FamilyTableViewController: UITableViewController {
 
 	var familyMembers: [familyDetail] = [gwen, brett, alicia, meagan, mads]
+	var delegate: FamilyDelagate?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
 		
          self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
@@ -78,4 +82,12 @@ class FamilyTableViewController: UITableViewController {
 		)
 	}
 
+}
+
+extension FamilyTableViewController: FamilyDelagate {
+	func addFamilyMember(_ familyMember: familyDetail) {
+		familyMembers.append(familyMember)
+	}
+
+	
 }
