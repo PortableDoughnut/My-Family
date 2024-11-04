@@ -23,6 +23,12 @@ class FamilyTableViewController: UITableViewController {
 		
          self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		tableView.reloadData()
+	}
 
     // MARK: - Table view data source
 
@@ -68,11 +74,13 @@ class FamilyTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-		guard let destination = segue.destination as? DetailViewController else { return }
-		guard let familyMember = sender as? familyDetail else { return }
-        // Pass the selected object to the new view controller.
-		destination.familyMember = familyMember
+//        // Get the new view controller using segue.destination.
+//		guard let destination = segue.destination as? DetailViewController else { return }
+//		guard let familyMember = sender as? familyDetail else { return }
+//        // Pass the selected object to the new view controller.
+//		destination.familyMember = familyMember
+		
+		
     }
 	
 	override func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

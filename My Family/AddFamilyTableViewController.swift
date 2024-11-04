@@ -22,73 +22,19 @@ class AddFamilyTableViewController: UITableViewController, UIImagePickerControll
 	
 	var familyMemberDelegate: FamilyDelagate?
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
-    // MARK: - Table view data source
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	var newFamilyMember: familyDetail = .init(
+		name: "",
+		landscapeImage: "",
+		portraitImage: "",
+		specality: "",
+		age: 25,
+		bio: ""
+	)
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
+	
 	@IBAction func imageButtonTapped(_ sender: UIButton) {
 		let imagePicker: UIImagePickerController = .init()
 		imagePicker.delegate = self
@@ -124,7 +70,7 @@ class AddFamilyTableViewController: UITableViewController, UIImagePickerControll
 		
 		present(alertController, animated: true, completion: nil)
 	}
-
+	
 	func imagePickerController(
 		_ picker: UIImagePickerController,
 		didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
@@ -141,34 +87,44 @@ class AddFamilyTableViewController: UITableViewController, UIImagePickerControll
 		dismiss(animated: true, completion: nil)
 	}
 	
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "addFamilyMemberSegue" {
-			
-		}
-	}
-	
-	@IBAction func onSaveButtonTapped(_ sender: UIBarButtonItem) {
-		let newFamilyMember: familyDetail = familyDetail(
+		guard segue.identifier == "familyTableUnwind" else { return }
+		guard let sender = sender as?  FamilyTableViewController else { return }
+		
+		newFamilyMember = familyDetail(
 			name: nameTextField.text ?? "",
-			landscapeImage: (landscapeImage.image ?? UIImage(named: "Gwen Coffee"))!,
-			portraitImage: (portraitImage.image ?? UIImage(named: "Gwen Mirror"))!,
+			landscapeImage: landscapeImage.image ?? UIImage(named: "Gwen Coffee") ?? UIImage(),
+			portraitImage: portraitImage.image ?? UIImage(named: "Gwen Mirror") ?? UIImage(),
 			specality: specalityTextField.text ?? "",
-			age: Int(ageTextField.text ?? "25")!,
+			age: Int(ageTextField.text ?? "") ?? 25,
 			bio: bioTextView.text ?? ""
-			)
-		familyMemberDelegate?.addFamilyMember(newFamilyMember)
+		)
+		print(newFamilyMember)
 	}
-	
+	// "familyTableUnwind"
+	// "familyTableSegue"
 	@IBAction func unwindToFamilyView(segue: UIStoryboardSegue) {
-		let newFamilyMember: familyDetail = familyDetail(
-			name: nameTextField.text ?? "",
-			landscapeImage: (landscapeImage.image ?? UIImage(named: "Gwen Coffee"))!,
-			portraitImage: (portraitImage.image ?? UIImage(named: "Gwen Mirror"))!,
-			specality: specalityTextField.text ?? "",
-			age: Int(ageTextField.text ?? "25")!,
-			bio: bioTextView.text ?? ""
-			)
-		familyMemberDelegate?.addFamilyMember(newFamilyMember)
-		performSegue(withIdentifier: "addFamilyMemberSegue", sender: nil)
+		guard segue.identifier == "familyTableUnwind",
+			  let source = segue.source as? AddFamilyTableViewController,
+			  let destinationVC = segue.destination as? FamilyTableViewController
+		else { return }
+		
+		if let indexPath = tableView.indexPathForSelectedRow {
+			destinationVC.familyMembers[indexPath.row] = newFamilyMember
+			tableView
+				.reloadRows(
+					at: [indexPath],
+					with: .none
+				)
+		} else {
+			let newIndexPath = IndexPath(row: destinationVC.familyMembers.count, section: 0)
+			destinationVC.familyMembers.append(newFamilyMember)
+			tableView
+				.insertRows(
+					at: [newIndexPath],
+					with: .automatic
+				)
+		}
 	}
 }

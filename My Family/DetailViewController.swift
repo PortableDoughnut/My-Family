@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
 	@IBOutlet weak var bioLabel: UILabel!
 	@IBOutlet weak var ageLabel: UILabel!
 	@IBOutlet weak var specalityLabel: UILabel!
-	@IBOutlet weak var landscapeImage: UIImageView!
+	@IBOutlet weak var portraitImage: UIImageView!
 	
 	var familyMember: familyDetail?
 	
@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
 			bioLabel.text = familyMember.bio
 			ageLabel.text = "\(familyMember.age)"
 			specalityLabel.text = familyMember.specality
-			landscapeImage.image = familyMember.landscapeImage
+			portraitImage.image = familyMember.portraitImage
 		}
     }
     

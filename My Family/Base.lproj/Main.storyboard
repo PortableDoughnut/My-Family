@@ -68,7 +68,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="75r-c6-43t">
                             <color key="tintColor" red="0.99607843139999996" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="Rhv-w4-AnB" kind="show" identifier="addFamilyMemberSegue" id="vdG-34-E8t"/>
+                                <segue destination="Rhv-w4-AnB" kind="show" identifier="familyTableSegue" id="vdG-34-E8t"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -312,8 +312,7 @@
                     <navigationItem key="navigationItem" id="h9f-ms-6qV">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="2Lk-pj-8b3">
                             <connections>
-                                <action selector="onSaveButtonTapped:" destination="Rhv-w4-AnB" id="1uQ-Ag-pda"/>
-                                <segue destination="rKt-CX-zEi" kind="unwind" unwindAction="unwindToFamilyViewWithSegue:" id="6mA-5Z-p4t"/>
+                                <segue destination="rKt-CX-zEi" kind="unwind" identifier="familyTableUnwind" unwindAction="unwindToFamilyViewWithSegue:" id="Hpl-EE-QY0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -331,7 +330,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXa-ha-rB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="rKt-CX-zEi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="722"/>
+            <point key="canvasLocation" x="1823" y="731"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KAH-VN-c7u">
@@ -455,7 +454,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="NRK-3u-7OM" id="YUk-ah-yuX"/>
                         <outlet property="bioLabel" destination="uui-8p-gA6" id="5K4-4u-qIq"/>
-                        <outlet property="landscapeImage" destination="29E-WP-hvr" id="mXk-Oh-xeE"/>
+                        <outlet property="portraitImage" destination="29E-WP-hvr" id="mXk-Oh-xeE"/>
                         <outlet property="specalityLabel" destination="Poo-7r-xsT" id="Uov-Xy-2Aq"/>
                     </connections>
                 </viewController>

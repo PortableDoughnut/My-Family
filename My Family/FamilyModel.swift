@@ -24,8 +24,8 @@ struct familyDetail {
 		bio: String
 	) {
 		self.name = name
-		self.landscapeImage = UIImage(named: landscapeImage)!
-		self.portraitImage = UIImage(named: portraitImage)!
+		self.landscapeImage = UIImage(named: landscapeImage) ?? UIImage(named: "Gwen Coffee")!
+		self.portraitImage = UIImage(named: portraitImage) ?? UIImage(named: "Gwen Mirror")!
 		self.specality = specality
 		self.age = age
 		self.bio = bio
